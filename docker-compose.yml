@@ -1,0 +1,14 @@
+# career-copilot/docker-compose.yml
+version: "3.8"
+services:
+  qdrant:
+    image: qdrant/qdrant
+    container_name: career-copilot-qdrant
+    ports:
+      - "6333:6333"   # REST API
+      - "6334:6334"   # gRPC
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+volumes:
+  qdrant_data:
